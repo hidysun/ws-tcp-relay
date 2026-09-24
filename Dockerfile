@@ -4,8 +4,9 @@ RUN pip install --no-cache-dir "websockets==13.1"
 
 WORKDIR /app
 COPY server.py /app/server.py
+COPY start.sh /app/start.sh
 
 ENV PORT=7860
 EXPOSE 7860
 
-CMD ["python", "-u", "/app/server.py"]
+CMD ["sh", "/app/start.sh"]
